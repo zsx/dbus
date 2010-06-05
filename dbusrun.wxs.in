@@ -1,0 +1,30 @@
+<?xml version='1.0'?>
+<Wix xmlns='http://schemas.microsoft.com/wix/2006/wi'>
+   <Module Id='DbusRun' Language='1033' Version='@VERSION@'>
+      <Package Id='02a1483a-2110-474d-99a5-2f7584a2df78' Description='Libxml2 runtime package'
+                Comments='This is a windows installer for dbus library runtime files'
+                Manufacturer='Gnome4Win' InstallerVersion='200' />
+ 
+      <Directory Id='TARGETDIR' Name='SourceDir'>
+		  <Directory Id='dlls' Name='bin'>
+			  <Component Id='dlls' Guid='38900807-592c-4a17-a2bb-c0493e7b1b38'>
+				  @DLLS@
+			  </Component>
+		  </Directory>
+		  <Directory Id='confs' Name='etc'>
+			  <Component Id='confs' Guid='f78526e0-74d8-4873-b34a-4768b685ab08'>
+				  @CONFS@
+			  </Component>
+		  </Directory>
+                  <Directory Id='data' Name='data'>
+                      <Directory Id='dbus_1' Name='dbus-1'>
+                          <Directory Id='services' Name='services'>
+                              <Component Id='services' Guid='805da0b7-7757-49f3-96dd-a4dd8b899db6'>
+                                  @SERVICES@
+                              </Component>
+                          </Directory>
+                      </Directory>
+		  </Directory>
+      </Directory>
+   </Module>
+</Wix>

@@ -1,0 +1,35 @@
+<?xml version='1.0'?>
+<Wix xmlns='http://schemas.microsoft.com/wix/2006/wi'>
+   <Module Id='DbusDev' Language='1033' Version='@VERSION@'>
+      <Package Id='1d9d24ff-9f51-4e56-85d6-5b8e2dcfbc01' Description='Dbus devlopement package'
+                Comments='This is a windows installer for dbus library devlopment files'
+                Manufacturer='Gnome4Win' InstallerVersion='200' />
+ 
+      <Directory Id='TARGETDIR' Name='SourceDir'>
+		  <Directory Id='include' Name='include'>
+                      <Directory Id='dbus_1.0' Name='dbus-1.0'>
+			  <Component Id='headers' Guid='f7c35be9-fa30-4863-acbc-972f4978cd29'>
+				  @HEADERS@
+			  </Component>
+                      </Directory>
+		  </Directory>
+		  <Directory Id='lib' Name='lib'>
+			  <Component Id='libs' Guid='20175ced-2636-438d-a285-e9998882fea8'>
+				  @LIBS@
+			  </Component>
+			  <Directory Id='pkgconfig' Name='pkgconfig'>
+				  <Component Id='pcs' Guid='d21e9745-812d-4974-b663-bbd5434f8f15'>
+					  @PCS@
+				  </Component>
+			  </Directory>
+		  </Directory>
+                  <!--
+		  <Directory Id='pdb' Name='pdb'>
+			  <Component Id='pdbs' Guid='9ad7e287-559e-46e4-a267-db2a5520cc9f'>
+				  @PDBS@
+			  </Component>
+		  </Directory>
+                  -->
+      </Directory>
+   </Module>
+</Wix>

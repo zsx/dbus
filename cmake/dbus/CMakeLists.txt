@@ -272,7 +272,7 @@ if(WIN32)
 endif(WIN32)
 
 install_targets(/lib dbus-1 )
-install_files(/include/dbus FILES ${dbusinclude_HEADERS})
+install_files(/include/dbus-1.0/dbus FILES ${dbusinclude_HEADERS})
 
 ### Internal library, used for the daemon, tools and tests, compiled statically.
 
